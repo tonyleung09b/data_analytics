@@ -1,0 +1,312 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "TONY LEUNG MiniProject_unit2_solution.ipynb",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/tonyleung09b/data_analytics/blob/main/tonyleung09b%20/%20data_analytics/Python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eyOFW9MkrE38"
+      },
+      "source": [
+        "Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.  Hint: how does an even / odd number react differently when divided by 2?\r\n",
+        "\r\n",
+        "**Bonus:**\r\n",
+        "* if the number is a multiple of 4, print out a different message.\r\n",
+        "* Ask the user for two numbers: one number to check (call it num) and one number to divide by (check).  If check divides evenly into num, tell that to the user.  If not, print a different appropriate message.\r\n",
+        "* Write a custom function for finding whether the number is even or odd and call it in your main program code.\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "l3PpjTi8q3zC",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2fa6aa4a-f146-45f4-8caf-49a081afc318"
+      },
+      "source": [
+        "# Project 1 Part 1 + bouns\r\n",
+        "prompt = \"Give me a number.\"\r\n",
+        "message = ''\r\n",
+        "\r\n",
+        "active = True\r\n",
+        "while active:\r\n",
+        "  message = input(prompt)\r\n",
+        " \r\n",
+        "\r\n",
+        "  if int(message)%2 !=0:\r\n",
+        "    print(\"This is ODD NUMBER.\")\r\n",
+        "    active = False\r\n",
+        "\r\n",
+        "  elif int(message)%4 ==0:\r\n",
+        "    print(\"This # can be divided by 4 perfectly\")\r\n",
+        "    active = False\r\n",
+        "\r\n",
+        "  else:\r\n",
+        "    print(\"This is EVEN NUMBER.\")\r\n",
+        "    active = False"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Give me a number.12\n",
+            "This # can be divided by 4 perfectly\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JMMLv4uQ8A1l",
+        "outputId": "d4a0fe9c-9b77-4697-fe7f-fcafd85b6bad"
+      },
+      "source": [
+        "# Project 1 part 2 bouns\r\n",
+        "prompt = \"Give me a number call NUM.\"\r\n",
+        "prompt2 = \"Give me another number call CHECK.\"\r\n",
+        "\r\n",
+        "active = True\r\n",
+        "while active:\r\n",
+        "  NUM = int(input(prompt))\r\n",
+        "  CHECK = int(input(prompt2))\r\n",
+        "\r\n",
+        "  if NUM%CHECK == 0:\r\n",
+        "    print(\"They divide evenly!!!\")\r\n",
+        "    active = False\r\n",
+        "\r\n",
+        "  else:\r\n",
+        "    print(\"Try a different # next time!\")\r\n",
+        "    active = False"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Give me a number call NUM.99\n",
+            "Give me another number call CHECK.3\n",
+            "They divide evenly!!!\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KAKVp24498-K",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "934727e8-b99e-48a8-f8e5-8be42410941b"
+      },
+      "source": [
+        "# Project 1 part 3 bouns\r\n",
+        "\r\n",
+        "def evenoddmatching(number):\r\n",
+        "  if number%2 == 0:\r\n",
+        "    print(\"EVEN\")\r\n",
+        "  else:\r\n",
+        "    print(\"ODD\")\r\n",
+        "\r\n",
+        "evenoddmatching(100)\r\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "EVEN\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "j0aCubXkEui8"
+      },
+      "source": [
+        "Make a two-player Rock-Paper-Scissors game. (Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, and ask if the players want to start a new game)​\r\n",
+        "\r\n",
+        "\r\n",
+        "*  Remember the rules:​\r\n",
+        "*  Rock beats scissors​\r\n",
+        "*  Scissors beats paper​\r\n",
+        "*  Paper beats rock\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "ZwF9wr3eE7Fa",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "db5207e9-d646-4fe6-bd16-a3eec329adde"
+      },
+      "source": [
+        "\r\n",
+        "\r\n",
+        "def rpsgame():\r\n",
+        "  P1 = (\"Player 1, you pick which one: ROCK or PAPER or SCISSORS? \")\r\n",
+        "  P2 = (\"Player 2, you pick which one: ROCK or PAPER or SCISSORS? \")\r\n",
+        "\r\n",
+        "  active = True\r\n",
+        "  while active:\r\n",
+        "    P1A = input(P1)\r\n",
+        "    P2A = input(P2)\r\n",
+        "\r\n",
+        "    if P1A == 'ROCK' and P2A == 'SCISSORS':\r\n",
+        "      print(\"Player 1 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "    if P2A == 'ROCK' and P1A == 'SCISSORS':\r\n",
+        "      print(\"Player 2 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "    elif P1A == 'ROCK' and P2A == 'PAPER':\r\n",
+        "      print(\"Player 2 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "    elif P2A == 'ROCK' and P1A == 'PAPER':\r\n",
+        "      print(\"Player 1 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "    elif P1A == 'SCISSORS' and P2A == 'PAPER':\r\n",
+        "      print(\"Player 1 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "    elif P2A == 'SCISSORS' and P1A == 'PAPER':\r\n",
+        "      print(\"Player 2 wins!!!\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "\r\n",
+        "\r\n",
+        "\r\n",
+        "    elif P2A == P1A:\r\n",
+        "      print(\"Draw\")\r\n",
+        "      x = input(\"Play one more game?  YES / NO  ? \")\r\n",
+        "      if x == \"NO\":\r\n",
+        "        active = False\r\n",
+        "        break\r\n",
+        "      elif x == \"YES\":\r\n",
+        "        rpsgame()\r\n",
+        "        active = False\r\n",
+        "active = False\r\n",
+        "\r\n",
+        "rpsgame()"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Player 1, you pick which one: ROCK or PAPER or SCISSORS? PAPER\n",
+            "Player 2, you pick which one: ROCK or PAPER or SCISSORS? SCISSORS\n",
+            "Player 2 wins!!!\n",
+            "Play one more game?  YES / NO  ? YES\n",
+            "Player 1, you pick which one: ROCK or PAPER or SCISSORS? SCISSORS\n",
+            "Player 2, you pick which one: ROCK or PAPER or SCISSORS? ROCK\n",
+            "Player 2 wins!!!\n",
+            "Play one more game?  YES / NO  ? NO\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "7BqjEkmhDsIW"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
